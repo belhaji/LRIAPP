@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Member extends Model
 {
+    public $fillable = ['email', 'password', 'role', 'active'];
+
     public function infoPerso()
     {
         return $this->hasOne(InfoPerso::class, 'member_id');

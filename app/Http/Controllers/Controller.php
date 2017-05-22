@@ -10,4 +10,11 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function checkLogin(){
+        if (!session()->has('user')){
+            return false;
+        }
+        return true;
+    }
 }
