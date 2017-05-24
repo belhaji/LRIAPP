@@ -1,12 +1,32 @@
 <?php
 
 
-Route::get('/',function (){
+Route::get('/', function () {
     return '<h1>OK</h1>';
 });
 
-Route::group(['prefix' => 'compte'], function (){
-    Route::get('profile','MemberController@profile');
+
+Route::group(['prefix' => 'admin'], function () {
+    // events
+    Route::get('evenement/new', function () {
+        return view('admin.event.new');
+    });
+    Route::post('evenement', 'AdminController@addEvent');
+    Route::get('evenement/list', 'AdminController@listEvents');
+    Route::get('evenement/valider', 'AdminController@validerEvents');
+    Route::get('evenement/valider/{id}', 'AdminController@validerEvents');
+    Route::get('evenement/delete/{id}', 'AdminController@deleteEvent');
+    // posts
+    Route::get('post/new', function () {
+        return view('admin.post.new');
+    });
+    Route::post('post', 'AdminController@addPost');
+    Route::get('post/list', 'AdminController@listPosts');
+    Route::get('post/valider', 'AdminController@validerPosts');
+    Route::get('post/valider/{id}', 'AdminController@validerPosts');
+    Route::get('post/delete/{id}', 'AdminController@deletePost');
+
+
 });
 
 

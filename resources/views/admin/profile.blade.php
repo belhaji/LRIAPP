@@ -1,3 +1,5 @@
-@extends('layouts.dashboard')
+@extends('layouts.admin')
 @section('title', 'profile')
-<h1>admin</h1>
+@section('content')
+    <h1>admin</h1>
+@endsection

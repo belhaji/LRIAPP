@@ -19,6 +19,7 @@ class CreateEventsTable extends Migration
             $table->string('description')->default('');
             $table->string('lieux')->default('');
             $table->integer('member_id')->default(0);
+            $table->integer('published')->default(0);
             $table->date('date')->default(\Carbon\Carbon::now());
             $table->timestamps();
         });

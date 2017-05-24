@@ -13,17 +13,17 @@ class MembersTableSeeder extends Seeder
     {
         DB::table('members')->insert([
             'email' => 'admin@gmail.com',
-            'password' => bcrypt('admin'),
+            'password' => 'admin',
             'role' => 'admin'
         ]);
         DB::table('members')->insert([
             'email' => 'responsable@gmail.com',
-            'password' => bcrypt('responsable'),
+            'password' => 'responsable',
             'role' => 'responsable'
         ]);
         DB::table('members')->insert([
             'email' => 'doctorant@gmail.com',
-            'password' => bcrypt('doctorant'),
+            'password' => 'doctorant',
             'role' => 'doctorant'
         ]);
 
