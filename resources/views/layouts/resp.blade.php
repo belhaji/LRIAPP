@@ -79,9 +79,6 @@
                             <li>
                                 <a href="/admin/evenement/list"><i class="fa fa-calendar-o fa-fw"></i> Mes Evenemnts</a>
                             </li>
-                            <li>
-                                <a href="/admin/evenement/valider"><i class="fa fa-calendar-check-o fa-fw"></i> Valider les evenemnts</a>
-                            </li>
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
@@ -93,9 +90,6 @@
                             </li>
                             <li>
                                 <a href="/admin/post/list"><i class="fa fa-book fa-fw"></i> Mes Actualités</a>
-                            </li>
-                            <li>
-                                <a href="/admin/post/valider"><i class="fa fa-check-circle fa-fw"></i> Valider les actualités</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->

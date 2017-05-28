@@ -15,8 +15,8 @@ class CreateEquipesTable extends Migration
     {
         Schema::create('equipes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nom')->default("");
-            $table->string('description')->default("");
+            $table->string('nom')->default("")->nullable();
+            $table->string('description')->default("")->nullable();
         });
     }
 

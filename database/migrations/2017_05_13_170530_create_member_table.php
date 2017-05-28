@@ -15,11 +15,11 @@ class CreateMemberTable extends Migration
     {
         Schema::create('members', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->string('role');
-            $table->boolean('active')->default(false);
-            $table->integer('equipe_id')->default(0);
+            $table->string('email')->unique()->nullable();
+            $table->string('password')->nullable();
+            $table->string('role')->nullable();
+            $table->boolean('active')->default(false)->nullable();
+            $table->integer('equipe_id')->default(0)->nullable();
             $table->timestamps();
         });
     }

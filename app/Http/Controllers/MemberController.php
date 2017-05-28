@@ -7,6 +7,7 @@ use App\InfoPerso;
 use App\Member;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\Else_;
 
 class MemberController extends Controller
 {
@@ -53,7 +54,14 @@ class MemberController extends Controller
             return redirect('login');
         }
         session()->put('user', $member);
-        return redirect('/compte/profile');
+        if ($member->role == 'admin'){
+            return redirect('/admin');
+        }else if ($member->role == 'responsable'){
+            return redirect('/resp');
+        }else{
+            return redirect('/doct');
+        }
+
     }
 
     public function profile()

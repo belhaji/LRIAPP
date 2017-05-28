@@ -15,11 +15,11 @@ class CreateFormationsTable extends Migration
     {
         Schema::create('formations', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('titre')->default('');
-            $table->string('etablissement')->default('');
-            $table->date('date_debut')->default(\Carbon\Carbon::now());
-            $table->date('date_fin')->default(\Carbon\Carbon::now());
-            $table->integer('member_id')->default(0);
+            $table->string('titre')->default('')->nullable();
+            $table->string('etablissement')->default('')->nullable();
+            $table->date('date_debut')->default(\Carbon\Carbon::now())->nullable();
+            $table->date('date_fin')->default(\Carbon\Carbon::now())->nullable();
+            $table->integer('member_id')->default(0)->nullable();
             $table->timestamps();
         });
     }

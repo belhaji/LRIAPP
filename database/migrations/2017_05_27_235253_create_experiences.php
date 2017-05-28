@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSousDomainesTable extends Migration
+class CreateExperiences extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateSousDomainesTable extends Migration
      */
     public function up()
     {
-        Schema::create('sous_domaines', function (Blueprint $table) {
+        Schema::create('experiences', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('titre')->default("")->nullable();
-            $table->integer('domaine_id')->default(0)->nullable();
+            $table->string('titre')->nullable();
+            $table->string('desc')->nullable();
+            $table->date('date_debut')->nullable();
+            $table->date('date_fin')->nullable();
+            $table->integer('member_id')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ class CreateSousDomainesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sous_domaines');
+        Schema::dropIfExists('experiences');
     }
 }

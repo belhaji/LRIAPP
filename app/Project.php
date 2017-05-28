@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
+    public $fillable = ['titre', 'date_debut', 'date_fin'];
     public function member()
     {
         return $this->belongsTo(Member::class,'member_id');
@@ -13,6 +14,6 @@ class Project extends Model
 
     public function sous_domaine()
     {
-        return $this->belongsTo(SousDomaine::class,'project_id');
+        return $this->belongsTo(SousDomaine::class,'sous_domaine_id');
     }
 }

@@ -15,11 +15,11 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('titre')->default('');
-            $table->date('date_debut')->default(\Carbon\Carbon::now());
-            $table->date('date_fin')->default(\Carbon\Carbon::now());
-            $table->integer('member_id')->default(0);
-            $table->integer('sous_domaine_id')->default(0);
+            $table->string('titre')->default('')->nullable();
+            $table->date('date_debut')->default(\Carbon\Carbon::now())->nullable();
+            $table->date('date_fin')->default(\Carbon\Carbon::now())->nullable();
+            $table->integer('member_id')->default(0)->nullable();
+            $table->integer('sous_domaine_id')->default(0)->nullable();
             $table->timestamps();
         });
     }

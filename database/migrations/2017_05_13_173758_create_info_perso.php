@@ -15,16 +15,16 @@ class CreateInfoPerso extends Migration
     {
         Schema::create('info_persos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nom')->default("");
-            $table->string('prenom')->default("");
-            $table->string('tel')->default("");
-            $table->string('bio')->default("");
-            $table->string('adresse')->default("");
-            $table->date('date_naissance')->default(\Carbon\Carbon::now());
-            $table->string('lieu_naissance')->default("");
-            $table->string('situation_familliale')->default("");
-            $table->string('status')->default("");
-            $table->integer('member_id');
+            $table->string('nom')->default("")->nullable();
+            $table->string('prenom')->default("")->nullable();
+            $table->string('tel')->default("")->nullable();
+            $table->string('bio')->default("")->nullable();
+            $table->string('adresse')->default("")->nullable();
+            $table->date('date_naissance')->default(\Carbon\Carbon::now())->nullable();
+            $table->string('lieu_naissance')->default("")->nullable();
+            $table->string('situation_familliale')->default("")->nullable();
+            $table->string('status')->default("")->nullable();
+            $table->integer('member_id')->nullable();
         });
     }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Event;
+use App\Member;
 use App\Post;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
@@ -51,13 +52,14 @@ class AdminController extends Controller
             return view('admin.event.valider', ['events' => $events]);
         }
         $event = Event::find($id);
-        if (!$event){
+        if (!$event) {
             return redirect('/');
         }
         $event->published = 1;
         $event->save();
         return redirect('/admin/evenementt/valider');
     }
+
     public function validerPosts($id = 0)
     {
         $user = session()->get('user');
@@ -69,7 +71,7 @@ class AdminController extends Controller
             return view('admin.post.valider', ['posts' => $posts]);
         }
         $post = Post::find($id);
-        if (!$post){
+        if (!$post) {
             return redirect('/');
         }
         $post->published = 1;
@@ -131,5 +133,22 @@ class AdminController extends Controller
         }
         $post->delete();
         return redirect('/admin/post/list');
+    }
+
+    public function validerMembreList()
+    {
+        $members = Member::where('active', 0)->get();
+        return view('admin.member.list', ['members' => $members]);
+    }
+    public function validerMembre($id = 0)
+    {
+        if ($id){
+            $m = Member::find($id);
+            if ($m){
+                $m->active = 1;
+                $m->save();
+            }
+        }
+        return redirect('/admin/membre/valider');
     }
 }

@@ -15,8 +15,8 @@ class CreateLaureatsTable extends Migration
     {
         Schema::create('laureats', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('date_affectation');
-            $table->integer('member_id');
+            $table->date('date_affectation')->nullable();
+            $table->integer('member_id')->nullable();
         });
     }
 

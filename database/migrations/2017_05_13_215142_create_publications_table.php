@@ -15,11 +15,11 @@ class CreatePublicationsTable extends Migration
     {
         Schema::create('publications', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('titre')->default('');
-            $table->string('contenu')->default('');
-            $table->string('description')->default('');
-            $table->integer('member_id')->default(0);
-            $table->date('date')->default(\Carbon\Carbon::now());
+            $table->string('titre')->default('')->nullable();
+            $table->string('contenu')->default('')->nullable();
+            $table->string('desc')->default('')->nullable();
+            $table->integer('member_id')->default(0)->nullable();
+            $table->date('date')->default(\Carbon\Carbon::now())->nullable();
             $table->timestamps();
         });
     }

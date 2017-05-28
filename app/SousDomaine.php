@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class SousDomaine extends Model
 {
+    public $fillable = ['titre', 'domaine_id'];
     public function domaine()
     {
         return $this->belongsTo(Domaine::class);

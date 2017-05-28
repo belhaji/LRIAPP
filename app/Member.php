@@ -42,6 +42,14 @@ class Member extends Model
     {
         return $this->hasMany(Publication::class, 'member_id');
     }
+    public function formations()
+    {
+        return $this->hasMany(Formation::class, 'member_id');
+    }
+    public function experiences()
+    {
+        return $this->hasMany(Experience::class, 'member_id');
+    }
 
 
 }
