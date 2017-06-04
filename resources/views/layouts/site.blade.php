@@ -99,12 +99,12 @@
                     <h3 class="widget-title">Nos Contactez</h3>
                     <form action="/message" method="post">
                         <div class="col-md-6">
-                            <p><input style="color: #000;" type="text" placeholder="Votre nom..." name="nom"></p>
-                            <p><input style="color: #000;" type="email" placeholder="Email..." name="email"></p>
+                            <p><input style="color: #000;" required type="text" placeholder="Votre nom..." name="nom"></p>
+                            <p><input style="color: #000;" required type="email" placeholder="Email..." name="email"></p>
                         </div>
                         <div class="col-md-6">
                             <p>
-                                <textarea style="color: #000;" name="message" placeholder="Message"></textarea>
+                                <textarea style="color: #000;" required name="message" placeholder="Message"></textarea>
                             </p>
                             <p class="text-right">
                                 <input type="submit" value="Envoyer le message">

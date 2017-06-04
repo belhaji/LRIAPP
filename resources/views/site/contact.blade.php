@@ -43,12 +43,12 @@
                 <div class="widget contact-form">
                     <form action="/message" method="post">
                         <div class="col-md-offset-3 col-md-6">
-                            <p><input type="text" placeholder="Votre nom..." name="nom"></p>
-                            <p><input type="email" placeholder="Email..." name="email"></p>
+                            <p><input type="text" required placeholder="Votre nom..." name="nom"></p>
+                            <p><input type="email" required placeholder="Email..." name="email"></p>
                         </div>
                         <div class="col-md-offset-3 col-md-6">
                             <p>
-                                <textarea name="message" placeholder="Message"></textarea>
+                                <textarea name="message"  required placeholder="Message"></textarea>
                             </p>
                             <p class="text-right">
                                 <input type="submit" value="Envoyer le message">

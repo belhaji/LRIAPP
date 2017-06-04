@@ -86,7 +86,7 @@ class MemberController extends Controller
     public function logout()
     {
         session()->forget('user');
-        return redirect('/login');
+        return redirect('/');
     }
 
     public function cv($id)
