@@ -1,15 +1,22 @@
 <?php
 
 
-Route::get('/', function () {
-    return '<h1>OK</h1>';
-});
+Route::get('/', 'SiteController@home');
+Route::get('/events', 'SiteController@events');
+Route::get('/posts', 'SiteController@posts');
+Route::get('/presentation', 'SiteController@presentation');
+Route::get('/directeurs', 'SiteController@directeurs');
+Route::get('/membres', 'SiteController@membres');
+Route::get('/themes', 'SiteController@themes');
+Route::get('/contact', 'SiteController@contact');
+Route::post('/message', 'AdminController@messages');
+Route::get('/recherche', 'SiteController@recherche');
 
 
 Route::group(['prefix' => 'admin'], function () {
 
-    Route::get('/', function (){
-       return view('admin.home');
+    Route::get('/', function () {
+        return view('admin.home');
     });
 
 
@@ -37,15 +44,17 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('membre/valider', 'AdminController@validerMembreList');
     Route::get('membre/valider/{id}', 'AdminController@validerMembre');
 
+    // Messages
+    Route::get('message', 'AdminController@messages');
+
 
 });
 
 
-
 Route::group(['prefix' => 'doct'], function () {
 
-    Route::get('/', function (){
-       return view('doct.home');
+    Route::get('/', function () {
+        return view('doct.home');
     });
 
     // posts
@@ -85,6 +94,78 @@ Route::group(['prefix' => 'doct'], function () {
     Route::post('projet', 'DoctorantController@projet');
 
 
+    // CV
+    Route::get('cv', 'DoctorantController@cv');
+
+});
+
+
+Route::group(['prefix' => 'resp'], function () {
+
+    Route::get('/', function () {
+        return view('resp.home');
+    });
+
+    // events
+    Route::get('evenement/new', function () {
+        return view('resp.event.new');
+    });
+    Route::post('evenement', 'ResponsableController@addEvent');
+    Route::get('evenement/list', 'ResponsableController@listEvents');
+    Route::get('evenement/delete/{id}', 'ResponsableController@deleteEvent');
+
+
+    // posts
+    Route::get('post/new', function () {
+        return view('resp.post.new');
+    });
+    Route::post('post', 'ResponsableController@addPost');
+    Route::get('post/list', 'ResponsableController@listPosts');
+    Route::get('post/delete/{id}', 'ResponsableController@deletePost');
+
+    // membres
+    Route::get('membres', 'ResponsableController@membreList');
+    Route::get('membres/valider', 'ResponsableController@validerMembreList');
+    Route::get('membre/valider/{id}', 'ResponsableController@validerMembre');
+
+    // Equipes
+    Route::get('equipe', 'ResponsableController@equipe');
+    Route::post('equipe', 'ResponsableController@equipe');
+    Route::get('equipe/delete/{id}', 'ResponsableController@deleteEquipe');
+    Route::get('equipe/{id}', 'ResponsableController@voirEquipe');
+    Route::get('equipe/{id}/add', 'ResponsableController@addToEquipe');
+    Route::get('equipe/{id}/member/{memberId}', 'ResponsableController@addMemberEquipe');
+    Route::get('equipe/{id}/delete/{memberId}', 'ResponsableController@deleteMemberEquipe');
+
+    // CV
+    Route::get('info', 'ResponsableController@infoPerso');
+    Route::get('info/editer', 'ResponsableController@infoPersoEditer');
+    Route::post('info/editer', 'ResponsableController@infoPersoEditer');
+
+    // Formation
+    Route::get('formation', 'ResponsableController@formation');
+    Route::get('formation/delete/{id}', 'ResponsableController@formationDelete');
+    Route::post('formation', 'ResponsableController@formation');
+
+    // Experiences
+    Route::get('experience', 'ResponsableController@experience');
+    Route::get('experience/delete/{id}', 'ResponsableController@experienceDelete');
+    Route::post('experience', 'ResponsableController@experience');
+
+    // Pubs
+    Route::get('pub', 'ResponsableController@publication');
+    Route::get('pub/delete/{id}', 'ResponsableController@publicationDelete');
+    Route::post('pub', 'ResponsableController@publication');
+
+    // Projets
+    Route::get('projet', 'ResponsableController@projet');
+    Route::get('projet/delete/{id}', 'ResponsableController@projetDelete');
+    Route::post('projet', 'ResponsableController@projet');
+
+
+    // CV
+    Route::get('cv', 'ResponsableController@cv');
+
 });
 
 
@@ -99,3 +180,5 @@ Route::get('login', function () {
 });
 Route::get('logout', 'MemberController@logout');
 Route::post('login', 'MemberController@login');
+
+Route::get('cv/{id}', 'MemberController@cv');

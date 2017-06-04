@@ -76,6 +76,9 @@
                 <div class="form-group ">
                     <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Submit</button>
                 </div>
+                <div class="form-group ">
+                    <a href="/inscription" class="btn btn-primary btn-lg btn-block login-button">S'inscrire</a>
+                </div>
             </form>
         </div>
     </div>

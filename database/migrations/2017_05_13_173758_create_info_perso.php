@@ -18,7 +18,7 @@ class CreateInfoPerso extends Migration
             $table->string('nom')->default("")->nullable();
             $table->string('prenom')->default("")->nullable();
             $table->string('tel')->default("")->nullable();
-            $table->string('bio')->default("")->nullable();
+            $table->text('bio')->nullable();
             $table->string('adresse')->default("")->nullable();
             $table->date('date_naissance')->default(\Carbon\Carbon::now())->nullable();
             $table->string('lieu_naissance')->default("")->nullable();

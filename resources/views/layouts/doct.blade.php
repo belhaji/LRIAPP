@@ -74,6 +74,9 @@
                         <a href="#"><i class="fa fa-user fa-fw"></i> Mon CV<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
+                                <a href="/doct/cv"><i class="fa fa-anchor fa-fw"></i> Consulter mon CV</a>
+                            </li>
+                            <li>
                                 <a href="/doct/info"><i class="fa fa-user-plus fa-fw"></i> Informations Personelles</a>
                             </li>
                             <li>

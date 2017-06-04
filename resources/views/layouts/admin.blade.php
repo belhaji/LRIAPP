@@ -26,6 +26,7 @@
     <!-- Custom Fonts -->
     <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <link href="/css/app.css" rel="stylesheet" type="text/css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -102,6 +103,10 @@
                     </li>
                     <li>
                         <a href="/admin/membre/valider"><i class="fa fa-users fa-fw"></i> Validation des membres</a>
+                    </li>
+
+                    <li>
+                        <a href="/admin/message"><i class="fa fa-bell fa-fw"></i> Mes Messages</a>
                     </li>
                 </ul>
             </div>

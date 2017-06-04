@@ -14,17 +14,20 @@ class MembersTableSeeder extends Seeder
         DB::table('members')->insert([
             'email' => 'admin@gmail.com',
             'password' => 'admin',
-            'role' => 'admin'
+            'role' => 'admin',
+            'active' => 1
         ]);
         DB::table('members')->insert([
             'email' => 'responsable@gmail.com',
             'password' => 'responsable',
-            'role' => 'responsable'
+            'role' => 'responsable',
+            'active' => 1
         ]);
         DB::table('members')->insert([
             'email' => 'doctorant@gmail.com',
             'password' => 'doctorant',
-            'role' => 'doctorant'
+            'role' => 'doctorant',
+            'active' => 1
         ]);
 
 

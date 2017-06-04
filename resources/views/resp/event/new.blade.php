@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.resp')
 @section('title', 'Nouveau Evenement')
 @section('content')
     <div id="row">
@@ -6,7 +6,7 @@
     </div>
     <div id="row">
         <div class="col-md-6">
-            <form role="form" method="post" action="/admin/evenement">
+            <form role="form" method="post" action="/resp/evenement">
                 <div class="form-group">
                     <label>Titre d'evenement</label>
                     <input class="form-control" name="titre">

@@ -71,13 +71,37 @@
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
                     <li>
+                        <a href="#"><i class="fa fa-user fa-fw"></i> Mon CV<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="/resp/cv"><i class="fa fa-anchor fa-fw"></i> Consulter mon CV</a>
+                            </li>
+                            <li>
+                                <a href="/resp/info"><i class="fa fa-user-plus fa-fw"></i> Informations Personelles</a>
+                            </li>
+                            <li>
+                                <a href="/resp/formation"><i class="fa fa-university fa-fw"></i> Formations</a>
+                            </li>
+                            <li>
+                                <a href="/resp/experience"><i class="fa fa-sitemap fa-fw"></i> Experiences</a>
+                            </li>
+                            <li>
+                                <a href="/resp/pub"><i class="fa fa-edit fa-fw"></i> Publications</a>
+                            </li>
+                            <li>
+                                <a href="/resp/projet"><i class="fa fa-product-hunt fa-fw"></i> Projets</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
                         <a href="#"><i class="fa fa-calendar fa-fw"></i> Evenements<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="/admin/evenement/new"><i class="fa fa-calendar-plus-o fa-fw"></i> Nouveau Evenement</a>
+                                <a href="/resp/evenement/new"><i class="fa fa-calendar-plus-o fa-fw"></i> Nouveau Evenement</a>
                             </li>
                             <li>
-                                <a href="/admin/evenement/list"><i class="fa fa-calendar-o fa-fw"></i> Mes Evenemnts</a>
+                                <a href="/resp/evenement/list"><i class="fa fa-calendar-o fa-fw"></i> Mes Evenemnts</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
@@ -86,16 +110,22 @@
                         <a href="#"><i class="fa fa-edit fa-fw"></i> Actualités<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="/admin/post/new"><i class="fa fa-edit fa-fw"></i> Nouvelle Actualité</a>
+                                <a href="/resp/post/new"><i class="fa fa-edit fa-fw"></i> Nouvelle Actualité</a>
                             </li>
                             <li>
-                                <a href="/admin/post/list"><i class="fa fa-book fa-fw"></i> Mes Actualités</a>
+                                <a href="/resp/post/list"><i class="fa fa-book fa-fw"></i> Mes Actualités</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
                     <li>
-                        <a href="/admin/membre/valider"><i class="fa fa-users fa-fw"></i> Validation des membres</a>
+                        <a href="/resp/equipe"><i class="fa fa-users fa-fw"></i> Mes Equipes</a>
+                    </li>
+                    <li>
+                        <a href="/resp/membres/valider"><i class="fa fa-users fa-fw"></i> Validation des membres</a>
+                    </li>
+                    <li>
+                        <a href="/resp/membres"><i class="fa fa-users fa-fw"></i> Liste des membres</a>
                     </li>
                 </ul>
             </div>

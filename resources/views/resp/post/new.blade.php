@@ -1,12 +1,12 @@
-@extends('layouts.admin')
+@extends('layouts.resp')
 @section('title', 'Nouveau Evenement')
 @section('content')
     <div id="row">
-        <h3>Nouveau Evenement</h3>
+        <h3>Nouveau Post</h3>
     </div>
     <div id="row">
         <div class="col-md-6">
-            <form role="form" method="post" action="/admin/post">
+            <form role="form" method="post" action="/resp/post">
                 <div class="form-group">
                     <label>Titre</label>
                     <input class="form-control" name="titre">

@@ -45,7 +45,7 @@
             @foreach($formations as $formation)
                 <tr>
                     <td>{{ $formation->titre }}</td>
-                    <td>{{ $formation->etablisemant }}</td>
+                    <td>{{ $formation->etablissement }}</td>
                     <td>{{ $formation->date_debut }}</td>
                     <td>{{ $formation->date_fin }}</td>
                     <td class="center">

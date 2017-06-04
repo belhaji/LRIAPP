@@ -1,21 +1,30 @@
-@extends('layouts.admin')
+@extends('layouts.resp')
 @section('title', 'Nouveau Evenement')
 @section('content')
     <div id="row">
-        <h3>Liste des comptes non activer</h3>
+        <h3>Liste des membres</h3>
     </div>
     <div id="row">
-        @foreach( $members as $member)
+        @foreach( $membres as $member)
             <div class="col-md-4">
-                <div class="well">
-                    <h4>{{ $member->email }}</h4>
-                    <small>{{ $member->role }}</small>
-                    <p>nom : {{ $member->infoPerso()->first()->nom }}</p>
-                    <p>prenom : {{ $member->infoPerso()->first()->prenom }}</p>
-                    <br>
-                    <br>
-                    <a class="btn btn-success" href="/admin/membre/valider/{{$member->id}}">Activer</a>
-                </div>
+                <a href="/cv/{{$member->id}}">
+                    <div class="well">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="/img/user.png" width="70" class="img-circle"/>
+                            </div>
+                            <div class="col-md-8">
+                                <h4>
+                                    {{ $member->infoPerso()->first()->nom }}
+                                    {{ $member->infoPerso()->first()->prenom }}
+                                </h4>
+                                <small class="">
+                                    {{ $member->role }}
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </a>
             </div>
         @endforeach
     </div>

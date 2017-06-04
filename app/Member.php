@@ -22,6 +22,10 @@ class Member extends Model
     {
         return $this->belongsTo(Equipe::class);
     }
+    public function equipes()
+    {
+        return $this->hasMany(Equipe::class, 'responsable_id');
+    }
 
     public function projects()
     {

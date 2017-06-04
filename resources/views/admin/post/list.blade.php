@@ -5,15 +5,15 @@
         <h3>Liste des Evenements</h3>
     </div>
     <div id="row">
-        @foreach( $posts as $post)
-            <div class="col-md-4">
-                <div class="well">
-                    <h4>{{ $post->titre }}</h4>
+        @foreach($posts as $post )
+            <div class="row message">
+                <div class="col-md-2">
+                    <img src="/img/post.png" alt="">
+                </div>
+                <div class="col-md-10">
+                    <h3 class="">{{$post->titre}}</h3>
+                    <small class="date pull-right">{{ $post->created_at }}</small>
                     <p>{{ $post->contenu }}</p>
-                    <small class="text-muted">{{($post->published) ? 'publier' : 'ne pas publier'}}</small>
-                    <br>
-                    <br>
-                    <a class="btn btn-danger" href="/admin/post/delete/{{$post->id}}">Delete</a>
                 </div>
             </div>
         @endforeach

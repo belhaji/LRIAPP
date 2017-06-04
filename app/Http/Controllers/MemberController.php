@@ -53,12 +53,16 @@ class MemberController extends Controller
             session()->flash('error', 'Email ou le mot de passe est incorrect');
             return redirect('login');
         }
+        if ($member->active == 0) {
+            session()->flash('error', 'Desolé votre compte n\'est pas encore activer');
+            return redirect('login');
+        }
         session()->put('user', $member);
-        if ($member->role == 'admin'){
+        if ($member->role == 'admin') {
             return redirect('/admin');
-        }else if ($member->role == 'responsable'){
+        } else if ($member->role == 'responsable') {
             return redirect('/resp');
-        }else{
+        } else {
             return redirect('/doct');
         }
 
@@ -74,7 +78,7 @@ class MemberController extends Controller
             return view('doc.profile');
         } elseif ($user->role == 'responsable') {
             return view('res.profile');
-        }else{
+        } else {
             return view('admin.profile');
         }
     }
@@ -83,5 +87,13 @@ class MemberController extends Controller
     {
         session()->forget('user');
         return redirect('/login');
+    }
+
+    public function cv($id)
+    {
+        $member = Member::find($id);
+        if (!$member)
+            return redirect('/');
+        return view('user.cv', ['user' => $member]);
     }
 }

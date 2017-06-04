@@ -150,11 +150,11 @@ class DoctorantController extends Controller
         if (!$user) {
             return redirect('/login');
         }
-        $formation = Formation::find($id);
-        if ($formation) {
-            $formation->delete();
+        $exp = Experience::find($id);
+        if ($exp) {
+            $exp->delete();
         }
-        return redirect('/doct/formation');
+        return redirect('/doct/experience');
     }
 
 
@@ -246,6 +246,17 @@ class DoctorantController extends Controller
             $projet->delete();
         }
         return redirect('/doct/projet');
+    }
+
+
+    public function cv()
+    {
+        $user = session()->get('user');
+        if (!$user) {
+            return redirect('/login');
+        }
+        $member = Member::find($user->id);
+        return view('doct.cv', ['user' => $member]);
     }
 
 

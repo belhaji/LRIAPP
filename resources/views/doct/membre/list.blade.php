@@ -7,12 +7,24 @@
     <div id="row">
         @foreach( $membres as $member)
             <div class="col-md-4">
-                <div class="well">
-                    <h4>{{ $member->email }}</h4>
-                    <small>{{ $member->role }}</small>
-                    <p>nom : {{ $member->infoPerso()->first()->nom }}</p>
-                    <p>prenom : {{ $member->infoPerso()->first()->prenom }}</p>
-                </div>
+                <a href="/cv/{{$member->id}}">
+                    <div class="well">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="/img/user.png" width="70" class="img-circle"/>
+                            </div>
+                            <div class="col-md-8">
+                                <h4>
+                                    {{ $member->infoPerso()->first()->nom }}
+                                    {{ $member->infoPerso()->first()->prenom }}
+                                </h4>
+                                <small class="">
+                                    {{ $member->role }}
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </a>
             </div>
         @endforeach
     </div>

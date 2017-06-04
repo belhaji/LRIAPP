@@ -17,6 +17,7 @@ class CreateEquipesTable extends Migration
             $table->increments('id');
             $table->string('nom')->default("")->nullable();
             $table->string('description')->default("")->nullable();
+            $table->integer('responsable_id')->nullable()->default(0);
         });
     }
 

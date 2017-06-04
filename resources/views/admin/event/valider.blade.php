@@ -6,14 +6,23 @@
     </div>
     <div id="row">
         @foreach( $events as $event)
-            <div class="col-md-4">
-                <div class="well">
-                    <h4>{{ $event->titre }}</h4>
+
+            <div class="message row">
+                <div class="col-md-2">
+                    <img src="/img/event.png" alt="">
+                </div>
+                <div class="col-md-10">
+                    <h3 class="">{{ $event->titre }}</h3>
+                    <small class="date pull-right">{{ $event->created_at }}</small>
                     <small>{{ $event->date }} à {{ $event->lieux }}</small>
                     <p>{{ $event->description }}</p>
+                    <small class="text-muted">{{($event->published) ? 'publier' : 'ne pas publier'}}</small>
+                    <br>
+                    <br>
                     <a class="btn btn-success" href="/admin/evenement/valider/{{$event->id}}">Valider</a>
                 </div>
             </div>
+
         @endforeach
     </div>
 @endsection

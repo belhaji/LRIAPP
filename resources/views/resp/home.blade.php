@@ -1,8 +1,7 @@
-@extends('layouts.admin')
+@extends('layouts.resp')
 @section('title', 'Nouveau Evenement')
 @section('content')
     <div id="row">
         <h3>Bienvenue cher Responsable</h3>
     </div>
-
 @endsection

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use App\Member;
+use App\Message;
 use App\Post;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
@@ -57,7 +58,7 @@ class AdminController extends Controller
         }
         $event->published = 1;
         $event->save();
-        return redirect('/admin/evenementt/valider');
+        return redirect('/admin/evenement/valider');
     }
 
     public function validerPosts($id = 0)
@@ -140,15 +141,31 @@ class AdminController extends Controller
         $members = Member::where('active', 0)->get();
         return view('admin.member.list', ['members' => $members]);
     }
+
     public function validerMembre($id = 0)
     {
-        if ($id){
+        if ($id) {
             $m = Member::find($id);
-            if ($m){
+            if ($m) {
                 $m->active = 1;
                 $m->save();
             }
         }
         return redirect('/admin/membre/valider');
+    }
+
+    public function messages(Request $request)
+    {
+        if ($request->isMethod('POST')) {
+            $msg = new Message($request->all());
+            $msg->save();
+            return redirect('/');
+        }
+        $user = session()->get('user');
+        if (!$user) {
+            return redirect('/login');
+        }
+        $msgs = Message::all();
+        return view('admin.message.list', ['messages' => $msgs]);
     }
 }
