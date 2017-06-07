@@ -1,6 +1,6 @@
--- MySQL dump 10.13  Distrib 5.6.24, for osx10.8 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.16, for osx10.12 (x86_64)
 --
--- Host: 127.0.0.1    Database: lriapp
+-- Host: localhost    Database: lriapp
 -- ------------------------------------------------------
 -- Server version	5.7.16
 
@@ -154,6 +154,31 @@ LOCK TABLES `formations` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `info_gens`
+--
+
+DROP TABLE IF EXISTS `info_gens`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `info_gens` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `titre` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `info_gens`
+--
+
+LOCK TABLES `info_gens` WRITE;
+/*!40000 ALTER TABLE `info_gens` DISABLE KEYS */;
+INSERT INTO `info_gens` VALUES (1,'Presentation du laboooo','hello ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis Lorem ipsum dolor sit amet, consectetur adipiscing elit,'),(2,'sasa',NULL),(3,'sasa',NULL),(4,'sasa',NULL),(5,'sasa','sas'),(6,'Presentation du labo','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis Lorem ipsum dolor sit amet, consectetur adipiscing elit,'),(7,'Presentation du labo','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis Lorem ipsum dolor sit amet, consectetur adipiscing elit.'),(8,'Presentation du labo','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis Lorem ipsum dolor sit amet, consectetur adipiscing elit,');
+/*!40000 ALTER TABLE `info_gens` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `info_persos`
 --
 
@@ -177,7 +202,7 @@ CREATE TABLE `info_persos` (
   `laureat` int(11) DEFAULT NULL,
   `member_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -186,7 +211,7 @@ CREATE TABLE `info_persos` (
 
 LOCK TABLES `info_persos` WRITE;
 /*!40000 ALTER TABLE `info_persos` DISABLE KEYS */;
-INSERT INTO `info_persos` VALUES (1,'admin','','',NULL,'','2017-06-07','2017-06-07','','','',NULL,NULL,NULL,1),(2,'Adil','Adil','+212608132784',NULL,'','2017-06-07','2017-06-07','','','',NULL,NULL,NULL,2),(3,'Shanelle Heywood','Shanelle Heywood','+212608132784',NULL,'','2017-06-07','2017-06-07','','','',NULL,NULL,NULL,3);
+INSERT INTO `info_persos` VALUES (1,'admin','','',NULL,'','2017-06-07','2017-06-07','','','',NULL,NULL,NULL,1);
 /*!40000 ALTER TABLE `info_persos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -232,7 +257,7 @@ CREATE TABLE `members` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `members_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -241,7 +266,7 @@ CREATE TABLE `members` (
 
 LOCK TABLES `members` WRITE;
 /*!40000 ALTER TABLE `members` DISABLE KEYS */;
-INSERT INTO `members` VALUES (1,'admin@gmail.com','fbef20528a361fd93bbf6e7386eb92a27dcfed17','admin',1,0,NULL,'2017-06-07 16:47:13'),(2,'adil@gmail.com','1698c2bea6c8000723d5bb70363a8352d846917e','doctorant',1,0,'2017-06-07 16:48:14','2017-06-07 16:48:59'),(3,'responsable@gmail.com','fbef20528a361fd93bbf6e7386eb92a27dcfed17','responsable',1,0,'2017-06-07 16:49:41','2017-06-07 16:50:25');
+INSERT INTO `members` VALUES (1,'admin@gmail.com','d033e22ae348aeb5660fc2140aec35850c4da997','admin',1,0,NULL,NULL);
 /*!40000 ALTER TABLE `members` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -284,7 +309,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=558 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=572 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -293,7 +318,7 @@ CREATE TABLE `migrations` (
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES (545,'2017_05_13_170530_create_member_table',1),(546,'2017_05_13_173758_create_info_perso',1),(547,'2017_05_13_181239_create_laureats_table',1),(548,'2017_05_13_194116_create_equipes_table',1),(549,'2017_05_13_200401_create_domaines_table',1),(550,'2017_05_13_201845_create_sous_domaines_table',1),(551,'2017_05_13_204504_create_projects_table',1),(552,'2017_05_13_213036_create_posts_table',1),(553,'2017_05_13_214114_create_events_table',1),(554,'2017_05_13_215142_create_publications_table',1),(555,'2017_05_13_215912_create_formations_table',1),(556,'2017_05_27_235253_create_experiences',1),(557,'2017_06_03_222256_create_messages_table',1);
+INSERT INTO `migrations` VALUES (558,'2017_05_13_170530_create_member_table',1),(559,'2017_05_13_173758_create_info_perso',1),(560,'2017_05_13_181239_create_laureats_table',1),(561,'2017_05_13_194116_create_equipes_table',1),(562,'2017_05_13_200401_create_domaines_table',1),(563,'2017_05_13_201845_create_sous_domaines_table',1),(564,'2017_05_13_204504_create_projects_table',1),(565,'2017_05_13_213036_create_posts_table',1),(566,'2017_05_13_214114_create_events_table',1),(567,'2017_05_13_215142_create_publications_table',1),(568,'2017_05_13_215912_create_formations_table',1),(569,'2017_05_27_235253_create_experiences',1),(570,'2017_06_03_222256_create_messages_table',1),(571,'2017_06_07_230847_create_info_gens_table',1);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -418,4 +443,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-07 16:51:54
+-- Dump completed on 2017-06-07 23:38:32
