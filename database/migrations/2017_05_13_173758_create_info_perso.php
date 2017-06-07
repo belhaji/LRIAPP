@@ -21,11 +21,13 @@ class CreateInfoPerso extends Migration
             $table->text('bio')->nullable();
             $table->string('adresse')->default("")->nullable();
             $table->date('date_naissance')->default(\Carbon\Carbon::now())->nullable();
+            $table->date('date_prev')->default(\Carbon\Carbon::now())->nullable();
             $table->string('lieu_naissance')->default("")->nullable();
             $table->string('situation_familliale')->default("")->nullable();
             $table->string('status')->default("")->nullable();
             $table->string('linkedin')->nullable();
             $table->string('gplus')->nullable();
+            $table->integer('laureat')->nullable();
             $table->integer('member_id')->nullable();
         });
     }

@@ -19,11 +19,21 @@ class MemberController extends Controller
         $password = $request->input('password');
         $tel = $request->input('tel');
         $role = $request->input('role');
+        $member = Member::where('email', $email)->first();
+        if ($member){
+            session()->flash('error', 'ce membre deja existe');
+            return redirect('/inscription');
+        }
+
+
+
         $member = new Member([
             'email' => $email,
-            'password' => $password,
+            'password' => sha1($password),
             'role' => ($role == 'doc') ? 'doctorant' : 'responsable'
         ]);
+
+
 
         if (!$member->save()) {
             $request->session()->flash('error', 'erreur de creation de l\'utilisateur');
@@ -46,8 +56,9 @@ class MemberController extends Controller
     {
         $email = $request->input('email');
         $password = $request->input('password');
+
         $member = Member::where('email', $email)
-            ->where('password', $password)
+            ->where('password', sha1($password))
             ->first();
         if ($member == null) {
             session()->flash('error', 'Email ou le mot de passe est incorrect');
@@ -96,4 +107,6 @@ class MemberController extends Controller
             return redirect('/');
         return view('user.cv', ['user' => $member]);
     }
+
+
 }

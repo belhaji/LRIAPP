@@ -28,7 +28,7 @@ CREATE TABLE `domaines` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,6 @@ CREATE TABLE `domaines` (
 
 LOCK TABLES `domaines` WRITE;
 /*!40000 ALTER TABLE `domaines` DISABLE KEYS */;
-INSERT INTO `domaines` VALUES (1,'domaine 1','2017-06-07 13:15:59','2017-06-07 13:15:59'),(2,'domaine 2','2017-06-07 13:15:59','2017-06-07 13:15:59');
 /*!40000 ALTER TABLE `domaines` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -84,7 +83,7 @@ CREATE TABLE `events` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -93,7 +92,6 @@ CREATE TABLE `events` (
 
 LOCK TABLES `events` WRITE;
 /*!40000 ALTER TABLE `events` DISABLE KEYS */;
-INSERT INTO `events` VALUES (1,'event 1',NULL,'',1,0,'2017-06-07','2017-06-07 13:15:59','2017-06-07 13:15:59'),(2,'event 2',NULL,'',2,0,'2017-06-07','2017-06-07 13:15:59','2017-06-07 13:15:59');
 /*!40000 ALTER TABLE `events` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -143,7 +141,7 @@ CREATE TABLE `formations` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -152,7 +150,6 @@ CREATE TABLE `formations` (
 
 LOCK TABLES `formations` WRITE;
 /*!40000 ALTER TABLE `formations` DISABLE KEYS */;
-INSERT INTO `formations` VALUES (1,'f 1','','2017-06-07','2017-06-07',1,'2017-06-07 13:15:59','2017-06-07 13:15:59'),(2,'f 2','','2017-06-07','2017-06-07',2,'2017-06-07 13:15:59','2017-06-07 13:15:59');
 /*!40000 ALTER TABLE `formations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -171,11 +168,13 @@ CREATE TABLE `info_persos` (
   `bio` text COLLATE utf8mb4_unicode_ci,
   `adresse` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '',
   `date_naissance` date DEFAULT '2017-06-07',
+  `date_prev` date DEFAULT '2017-06-07',
   `lieu_naissance` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '',
   `situation_familliale` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '',
   `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '',
   `linkedin` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `gplus` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `laureat` int(11) DEFAULT NULL,
   `member_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -187,7 +186,7 @@ CREATE TABLE `info_persos` (
 
 LOCK TABLES `info_persos` WRITE;
 /*!40000 ALTER TABLE `info_persos` DISABLE KEYS */;
-INSERT INTO `info_persos` VALUES (1,'admin','','',NULL,'','2017-06-07','','','',NULL,NULL,1),(2,'responsable',NULL,NULL,NULL,NULL,'2017-06-07',NULL,NULL,NULL,'https://linkedin.com/in/belhajiadil','sasa',2),(3,'doctorant',NULL,NULL,NULL,NULL,'2017-06-07',NULL,NULL,NULL,'https://linkedin.com/in/belhajiadil',NULL,3);
+INSERT INTO `info_persos` VALUES (1,'admin','','',NULL,'','2017-06-07','2017-06-07','','','',NULL,NULL,NULL,1),(2,'Adil','Adil','+212608132784',NULL,'','2017-06-07','2017-06-07','','','',NULL,NULL,NULL,2),(3,'Shanelle Heywood','Shanelle Heywood','+212608132784',NULL,'','2017-06-07','2017-06-07','','','',NULL,NULL,NULL,3);
 /*!40000 ALTER TABLE `info_persos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -242,7 +241,7 @@ CREATE TABLE `members` (
 
 LOCK TABLES `members` WRITE;
 /*!40000 ALTER TABLE `members` DISABLE KEYS */;
-INSERT INTO `members` VALUES (1,'admin@gmail.com','admin','admin',1,0,NULL,NULL),(2,'responsable@gmail.com','responsable','responsable',1,0,NULL,NULL),(3,'doctorant@gmail.com','doctorant','doctorant',1,0,NULL,NULL);
+INSERT INTO `members` VALUES (1,'admin@gmail.com','fbef20528a361fd93bbf6e7386eb92a27dcfed17','admin',1,0,NULL,'2017-06-07 16:47:13'),(2,'adil@gmail.com','1698c2bea6c8000723d5bb70363a8352d846917e','doctorant',1,0,'2017-06-07 16:48:14','2017-06-07 16:48:59'),(3,'responsable@gmail.com','fbef20528a361fd93bbf6e7386eb92a27dcfed17','responsable',1,0,'2017-06-07 16:49:41','2017-06-07 16:50:25');
 /*!40000 ALTER TABLE `members` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -285,7 +284,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=480 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=558 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -294,7 +293,7 @@ CREATE TABLE `migrations` (
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES (467,'2017_05_13_170530_create_member_table',1),(468,'2017_05_13_173758_create_info_perso',1),(469,'2017_05_13_181239_create_laureats_table',1),(470,'2017_05_13_194116_create_equipes_table',1),(471,'2017_05_13_200401_create_domaines_table',1),(472,'2017_05_13_201845_create_sous_domaines_table',1),(473,'2017_05_13_204504_create_projects_table',1),(474,'2017_05_13_213036_create_posts_table',1),(475,'2017_05_13_214114_create_events_table',1),(476,'2017_05_13_215142_create_publications_table',1),(477,'2017_05_13_215912_create_formations_table',1),(478,'2017_05_27_235253_create_experiences',1),(479,'2017_06_03_222256_create_messages_table',1);
+INSERT INTO `migrations` VALUES (545,'2017_05_13_170530_create_member_table',1),(546,'2017_05_13_173758_create_info_perso',1),(547,'2017_05_13_181239_create_laureats_table',1),(548,'2017_05_13_194116_create_equipes_table',1),(549,'2017_05_13_200401_create_domaines_table',1),(550,'2017_05_13_201845_create_sous_domaines_table',1),(551,'2017_05_13_204504_create_projects_table',1),(552,'2017_05_13_213036_create_posts_table',1),(553,'2017_05_13_214114_create_events_table',1),(554,'2017_05_13_215142_create_publications_table',1),(555,'2017_05_13_215912_create_formations_table',1),(556,'2017_05_27_235253_create_experiences',1),(557,'2017_06_03_222256_create_messages_table',1);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -314,7 +313,7 @@ CREATE TABLE `posts` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -323,7 +322,6 @@ CREATE TABLE `posts` (
 
 LOCK TABLES `posts` WRITE;
 /*!40000 ALTER TABLE `posts` DISABLE KEYS */;
-INSERT INTO `posts` VALUES (1,'post 1',NULL,1,0,'2017-06-07 13:15:59','2017-06-07 13:15:59'),(2,'post 2',NULL,2,0,'2017-06-07 13:15:59','2017-06-07 13:15:59');
 /*!40000 ALTER TABLE `posts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -344,7 +342,7 @@ CREATE TABLE `projects` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -353,7 +351,6 @@ CREATE TABLE `projects` (
 
 LOCK TABLES `projects` WRITE;
 /*!40000 ALTER TABLE `projects` DISABLE KEYS */;
-INSERT INTO `projects` VALUES (1,'projet 1','2017-06-07','2017-06-07',1,1,'2017-06-07 13:15:59','2017-06-07 13:15:59'),(2,'projet 2','2017-06-07','2017-06-07',2,2,'2017-06-07 13:15:59','2017-06-07 13:15:59');
 /*!40000 ALTER TABLE `projects` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -374,7 +371,7 @@ CREATE TABLE `publications` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -383,7 +380,6 @@ CREATE TABLE `publications` (
 
 LOCK TABLES `publications` WRITE;
 /*!40000 ALTER TABLE `publications` DISABLE KEYS */;
-INSERT INTO `publications` VALUES (1,'pub 1',NULL,NULL,1,'2017-06-07','2017-06-07 13:15:59','2017-06-07 13:15:59'),(2,'pub 2',NULL,NULL,2,'2017-06-07','2017-06-07 13:15:59','2017-06-07 13:15:59');
 /*!40000 ALTER TABLE `publications` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -401,7 +397,7 @@ CREATE TABLE `sous_domaines` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -410,7 +406,6 @@ CREATE TABLE `sous_domaines` (
 
 LOCK TABLES `sous_domaines` WRITE;
 /*!40000 ALTER TABLE `sous_domaines` DISABLE KEYS */;
-INSERT INTO `sous_domaines` VALUES (1,'sous domaine 1',1,'2017-06-07 13:15:59','2017-06-07 13:15:59'),(2,'sous domaine 2',2,'2017-06-07 13:15:59','2017-06-07 13:15:59');
 /*!40000 ALTER TABLE `sous_domaines` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -423,4 +418,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-07 14:29:11
+-- Dump completed on 2017-06-07 16:51:54

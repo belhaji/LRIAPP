@@ -86,7 +86,7 @@
                                     <tr>
                                         <td>
                                             <i class="fa fa-linkedin-square"></i>
-                                                Linked in
+                                            Linked in
                                         </td>
                                         <td>
                                             <a href="{{ $user->infoPerso()->first()->linkedin  }}">
@@ -97,7 +97,7 @@
                                     <tr>
                                         <td>
                                             <i class="fa fa-google-plus"></i>
-                                                Google plus
+                                            Google plus
                                         </td>
                                         <td>
                                             <a href="{{ $user->infoPerso()->first()->gplus  }}">
@@ -105,6 +105,16 @@
                                             </a>
                                         </td>
                                     </tr>
+                                    @if($user->infoPerso()->first()->laureat)
+                                        <tr>
+                                            <td>
+                                                Laureat
+                                            </td>
+                                            <td>
+                                                Oui
+                                            </td>
+                                        </tr>
+                                    @endif
                                     </tbody>
                                 </table>
                             </div>

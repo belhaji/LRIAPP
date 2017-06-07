@@ -11,6 +11,7 @@ use App\Post;
 use App\Project;
 use App\Publication;
 use App\SousDomaine;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class DoctorantController extends Controller
@@ -72,6 +73,19 @@ class DoctorantController extends Controller
         if (!$user) {
             return redirect('/login');
         }
+        $date = $user->infoPerso()->first()->date_prev;
+        $date = Carbon::parse($date);
+        if (Carbon::now()->gt($date)) {
+            $info = $user->infoPerso()->first();
+            $info->laureat = 1;
+            $info->save();
+        } else {
+            $info = $user->infoPerso()->first();
+            $info->laureat = 0;
+            $info->save();
+        }
+
+
         return view('doct.info.show', ['user' => $user]);
     }
 
@@ -257,6 +271,23 @@ class DoctorantController extends Controller
         }
         $member = Member::find($user->id);
         return view('doct.cv', ['user' => $member]);
+    }
+
+    public function changerPassword(Request $request)
+    {
+        $user = session()->get('user');
+        if (!$user) {
+            return redirect('/login');
+        }
+
+        if ($request->isMethod('POST')) {
+            $new = $request->input('password');
+            $user->password = sha1($new);
+            $user->save();
+            session()->flash('success', 'a été changé avec succés');
+        }
+        return view('doct.membre.password');
+
     }
 
 

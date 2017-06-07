@@ -64,6 +64,12 @@
                                         </td>
                                     </tr>
                                     <tr>
+                                        <td>Date Prévue</td>
+                                        <td>
+                                            {{ $user->infoPerso()->first()->date_prev}}
+                                        </td>
+                                    </tr>
+                                    <tr>
                                         <td>Lieux de naissance</td>
                                         <td>
                                             {{ $user->infoPerso()->first()->lieu_naissance  }}
@@ -103,6 +109,16 @@
                                             </a>
                                         </td>
                                     </tr>
+                                    @if($user->infoPerso()->first()->laureat)
+                                        <tr>
+                                            <td>
+                                                Laureat
+                                            </td>
+                                            <td>
+                                                Oui
+                                            </td>
+                                        </tr>
+                                    @endif
                                     </tbody>
                                 </table>
                             </div>

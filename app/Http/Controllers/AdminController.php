@@ -173,4 +173,23 @@ class AdminController extends Controller
         $msgs = Message::all();
         return view('admin.message.list', ['messages' => $msgs]);
     }
+
+
+
+    public function changerPassword(Request $request)
+    {
+        $user = session()->get('user');
+        if (!$user) {
+            return redirect('/login');
+        }
+
+        if ($request->isMethod('POST')) {
+            $new = $request->input('password');
+            $user->password = sha1($new);
+            $user->save();
+            session()->flash('success', 'a été changé avec succés');
+        }
+        return view('admin.member.password');
+
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Domaine;
 use App\Equipe;
 use App\Event;
 use App\InfoPerso;
@@ -63,7 +64,10 @@ class SiteController extends Controller
 
     public function themes()
     {
-        return view('site.theme');
+        $domaine = Domaine::all();
+        return view('site.theme', [
+            'domaines' => $domaine
+        ]);
     }
 
     public function contact()

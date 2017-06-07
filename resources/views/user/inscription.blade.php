@@ -111,8 +111,8 @@
                             <span class="input-group-addon"><i class="fa fa-user fa-lg" aria-hidden="true"></i></span>
                             <select class="form-control" name="role" id="role"
                                     placeholder="Selectionner votre Role">
-                                <option name="doc">Doctorant</option>
-                                <option name="res">Responsable</option>
+                                <option value="doc">Doctorant</option>
+                                <option value="res">Responsable</option>
                             </select>
                         </div>
                     </div>

@@ -91,6 +91,9 @@
                             <li>
                                 <a href="/doct/projet"><i class="fa fa-product-hunt fa-fw"></i> Projets</a>
                             </li>
+                            <li>
+                                <a href="/doct/password"><i class="fa fa-lock fa-fw"></i> Mot de passe</a>
+                            </li>
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>

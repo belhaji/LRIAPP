@@ -111,6 +111,9 @@
                     <li>
                         <a href="/admin/membre"><i class="fa fa-users fa-fw"></i> Liste des membres</a>
                     </li>
+                    <li>
+                        <a href="/admin/password"><i class="fa fa-lock fa-fw"></i> Mot de passe</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.sidebar-collapse -->

@@ -100,6 +100,16 @@
                                 </a>
                             </td>
                         </tr>
+                        @if($user->infoPerso()->first()->laureat)
+                            <tr>
+                                <td>
+                                    Laureat
+                                </td>
+                                <td>
+                                    Oui
+                                </td>
+                            </tr>
+                        @endif
                         </tbody>
                     </table>
                 </div>

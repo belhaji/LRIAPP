@@ -264,6 +264,7 @@ class ResponsableController extends Controller
                     'titre' => $request->input('sdomaine'),
                     'sous_domaine_id' => $domaine->id
                 ]);
+                $sdomaine->domaine()->associate($domaine);
                 $sdomaine->save();
             } else {
                 $sdomaine = SousDomaine::find($sdomaine);
@@ -412,5 +413,24 @@ class ResponsableController extends Controller
         $member->save();
         return redirect('/resp/equipe/' . $id);
     }
+
+
+    public function changerPassword(Request $request)
+    {
+        $user = session()->get('user');
+        if (!$user) {
+            return redirect('/login');
+        }
+
+        if ($request->isMethod('POST')) {
+            $new = $request->input('password');
+            $user->password = sha1($new);
+            $user->save();
+            session()->flash('success', 'a été changé avec succés');
+        }
+        return view('resp.member.password');
+
+    }
+
 
 }

@@ -38,6 +38,11 @@
                            name="date_naissance">
                 </div>
                 <div class="form-group">
+                    <label>Date Prévue</label>
+                    <input type="date" value="{{$user->infoPerso()->first()->date_prev }}" class="form-control"
+                           name="date_prev">
+                </div>
+                <div class="form-group">
                     <label>Lieux de naissance</label>
                     <input value="{{$user->infoPerso()->first()->lieu_naissance }}" class="form-control"
                            name="lieu_naissance">

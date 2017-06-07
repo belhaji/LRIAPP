@@ -50,6 +50,12 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('message', 'AdminController@messages');
 
 
+    // password
+    Route::get('password', 'AdminController@changerPassword');
+    Route::post('password', 'AdminController@changerPassword');
+
+
+
 });
 
 
@@ -98,6 +104,11 @@ Route::group(['prefix' => 'doct'], function () {
 
     // CV
     Route::get('cv', 'DoctorantController@cv');
+
+    // password
+    Route::get('password', 'DoctorantController@changerPassword');
+    Route::post('password', 'DoctorantController@changerPassword');
+
 
 });
 
@@ -168,6 +179,10 @@ Route::group(['prefix' => 'resp'], function () {
     // CV
     Route::get('cv', 'ResponsableController@cv');
 
+    // password
+    Route::get('password', 'ResponsableController@changerPassword');
+    Route::post('password', 'ResponsableController@changerPassword');
+
 });
 
 
@@ -184,3 +199,4 @@ Route::get('logout', 'MemberController@logout');
 Route::post('login', 'MemberController@login');
 
 Route::get('cv/{id}', 'MemberController@cv');
+
