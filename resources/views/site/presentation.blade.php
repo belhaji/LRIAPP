@@ -4,29 +4,16 @@
 
     <div class="page-head" style="margin-top: 200px" data-bg-image="images/page-head-1.jpg">
         <div class="container">
-            <h2 class="page-title">Presentation du labo</h2>
+            <h2 class="page-title">{{ $info->titre }}</h2>
         </div>
     </div>
     <div class="row fullwidth-block">
         <main class="main-content col-md-8 col-md-offset-2">
-            <div class="col-md-12   ">
+            <div class="col-md-12">
                 <ul class="testimonial-list">
                     <li>
                         <blockquote>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis
-                            </p>
+                            <p>{{ $info->description  }}</p>
                         </blockquote>
                     </li>
                 </ul>

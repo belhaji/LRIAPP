@@ -114,6 +114,9 @@
                     <li>
                         <a href="/admin/password"><i class="fa fa-lock fa-fw"></i> Mot de passe</a>
                     </li>
+                    <li>
+                        <a href="/admin/infosite"><i class="fa fa-adn fa-fw"></i> Description du site</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.sidebar-collapse -->

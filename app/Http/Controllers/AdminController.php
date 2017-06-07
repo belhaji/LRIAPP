@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Event;
+use App\InfoGen;
 use App\Member;
 use App\Message;
 use App\Post;
@@ -141,6 +142,7 @@ class AdminController extends Controller
         $members = Member::where('active', 0)->get();
         return view('admin.member.list', ['members' => $members]);
     }
+
     public function membreList()
     {
         $members = Member::all();
@@ -175,7 +177,6 @@ class AdminController extends Controller
     }
 
 
-
     public function changerPassword(Request $request)
     {
         $user = session()->get('user');
@@ -190,6 +191,28 @@ class AdminController extends Controller
             session()->flash('success', 'a été changé avec succés');
         }
         return view('admin.member.password');
+
+    }
+
+    public function infosite(Request $request)
+    {
+        $user = session()->get('user');
+        if (!$user) {
+            return redirect('/login');
+        }
+
+        $info = InfoGen::first();
+        if (!$info){
+            $info = new InfoGen();
+        }
+        if ($request->isMethod('POST')) {
+            $info->fill($request->all());
+            $info->save();
+            session()->flash('success', 'les informations a été enregistré avec succés');
+        }
+        return view('admin.site.info', [
+            'info' => $info
+        ]);
 
     }
 }

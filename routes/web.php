@@ -40,6 +40,10 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('post/valider/{id}', 'AdminController@validerPosts');
     Route::get('post/delete/{id}', 'AdminController@deletePost');
 
+    // info du site
+    Route::get('infosite', 'AdminController@infosite');
+    Route::post('infosite', 'AdminController@infosite');
+
     // membres
 
     Route::get('membre', 'AdminController@membreList');

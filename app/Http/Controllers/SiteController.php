@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Domaine;
 use App\Equipe;
 use App\Event;
+use App\InfoGen;
 use App\InfoPerso;
 use App\Member;
 use App\Post;
@@ -47,7 +48,11 @@ class SiteController extends Controller
     public function presentation()
     {
         $equipes = Equipe::all();
-        return view('site.presentation', ['equipes' => $equipes]);
+        $info = InfoGen::first();
+        return view('site.presentation', [
+            'equipes' => $equipes,
+            'info' => $info
+        ]);
     }
 
     public function directeurs()
