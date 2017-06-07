@@ -68,7 +68,7 @@ class AdminController extends Controller
             return redirect('/login');
         }
         if ($id == 0) {
-            $posts = $user->posts()->where('published', 0)->get();
+            $posts = Post::where('published', 0)->get();
             return view('admin.post.valider', ['posts' => $posts]);
         }
         $post = Post::find($id);
@@ -140,6 +140,11 @@ class AdminController extends Controller
     {
         $members = Member::where('active', 0)->get();
         return view('admin.member.list', ['members' => $members]);
+    }
+    public function membreList()
+    {
+        $members = Member::all();
+        return view('admin.member.list2', ['members' => $members]);
     }
 
     public function validerMembre($id = 0)

@@ -14,6 +14,7 @@
                     <h3 class="">{{$post->titre}}</h3>
                     <small class="date pull-right">{{ $post->created_at }}</small>
                     <p>{{ $post->contenu }}</p>
+                    <p>{{ ($post->published == 0)? "non ": "" }} publier</p>
                 </div>
             </div>
         @endforeach

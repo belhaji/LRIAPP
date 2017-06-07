@@ -108,6 +108,9 @@
                     <li>
                         <a href="/admin/message"><i class="fa fa-bell fa-fw"></i> Mes Messages</a>
                     </li>
+                    <li>
+                        <a href="/admin/membre"><i class="fa fa-users fa-fw"></i> Liste des membres</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.sidebar-collapse -->

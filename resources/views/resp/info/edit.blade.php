@@ -51,6 +51,14 @@
                     <label>Statut</label>
                     <input value="{{$user->infoPerso()->first()->status}}" class="form-control" name="status">
                 </div>
+                <div class="form-group">
+                    <label>Linked in</label>
+                    <input value="{{$user->infoPerso()->first()->linkedin}}" class="form-control" name="linkedin">
+                </div>
+                <div class="form-group">
+                    <label>Google plus</label>
+                    <input value="{{$user->infoPerso()->first()->gplus}}" class="form-control" name="gplus">
+                </div>
                 <button type="submit" class="btn btn-primary">Editer</button>
                 {{ csrf_field() }}
             </form>

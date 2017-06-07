@@ -81,6 +81,28 @@
                                             {{ $user->infoPerso()->first()->status  }}
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td>
+                                            <i class="fa fa-linkedin-square"></i>
+                                            Linked in
+                                        </td>
+                                        <td>
+                                            <a href="{{ $user->infoPerso()->first()->linkedin  }}">
+                                                {{ $user->infoPerso()->first()->linkedin  }}
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <i class="fa fa-google-plus"></i>
+                                            Google plus
+                                        </td>
+                                        <td>
+                                            <a href="{{ $user->infoPerso()->first()->gplus  }}">
+                                                {{ $user->infoPerso()->first()->gplus  }}
+                                            </a>
+                                        </td>
+                                    </tr>
                                     </tbody>
                                 </table>
                             </div>

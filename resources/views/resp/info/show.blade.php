@@ -3,7 +3,9 @@
 @section('content')
     <div id="row">
         <br>
+
         <h3>Mes informations personelles</h3>
+
     </div>
     <div id="row">
         <div class="container">
@@ -79,6 +81,28 @@
                                         <td>Statut</td>
                                         <td>
                                             {{ $user->infoPerso()->first()->status  }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <i class="fa fa-linkedin-square"></i>
+                                                Linked in
+                                        </td>
+                                        <td>
+                                            <a href="{{ $user->infoPerso()->first()->linkedin  }}">
+                                                {{ $user->infoPerso()->first()->linkedin  }}
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <i class="fa fa-google-plus"></i>
+                                                Google plus
+                                        </td>
+                                        <td>
+                                            <a href="{{ $user->infoPerso()->first()->gplus  }}">
+                                                {{ $user->infoPerso()->first()->gplus  }}
+                                            </a>
                                         </td>
                                     </tr>
                                     </tbody>

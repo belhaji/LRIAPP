@@ -24,6 +24,8 @@ class CreateInfoPerso extends Migration
             $table->string('lieu_naissance')->default("")->nullable();
             $table->string('situation_familliale')->default("")->nullable();
             $table->string('status')->default("")->nullable();
+            $table->string('linkedin')->nullable();
+            $table->string('gplus')->nullable();
             $table->integer('member_id')->nullable();
         });
     }

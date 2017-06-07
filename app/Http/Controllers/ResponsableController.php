@@ -378,7 +378,7 @@ class ResponsableController extends Controller
         if (!$equipe) {
             return redirect('/resp');
         }
-        return view('resp.equipe.add', ['equipe' => $equipe, 'members' => Member::all()]);
+        return view('resp.equipe.add', ['equipe' => $equipe, 'members' => Member::where('role','doctorant')->get()]);
     }
 
     public function addMemberEquipe($id = 0, $memberId = 0)

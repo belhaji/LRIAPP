@@ -2,7 +2,7 @@
 @section('title', 'Nouveau Evenement')
 @section('content')
     <div id="row">
-        <h3>Liste des Evenements</h3>
+        <h3>Liste des Actualitées</h3>
     </div>
     <div id="row">
         @foreach( $posts as $post)

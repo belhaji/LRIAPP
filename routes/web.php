@@ -41,6 +41,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('post/delete/{id}', 'AdminController@deletePost');
 
     // membres
+
+    Route::get('membre', 'AdminController@membreList');
     Route::get('membre/valider', 'AdminController@validerMembreList');
     Route::get('membre/valider/{id}', 'AdminController@validerMembre');
 
