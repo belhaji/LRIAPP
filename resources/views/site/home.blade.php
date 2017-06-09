@@ -4,36 +4,16 @@
 
     <div class="hero">
         <ul class="slides">
-            <li data-bg-image="images/slider-1.jpg">
-                <div class="container">
-                    <div class="slide-content">
-                        <h2 class="slide-title">LaboreLabore et dolore magna</h2>
-                        <p>Enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi aliquip ex ea commodo
-                            consequat duis aute irure dolor in reprehenderit.</p>
-                        <a href="#" class="button">See details</a>
+            @foreach($slides as $slide)
+                <li data-bg-image="images/slider-1.jpg">
+                    <div class="container">
+                        <div class="slide-content">
+                            <h2 class="slide-title">{{ $slide->titre }}</h2>
+                            <p>{{ $slide->description }}</p>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li data-bg-image="images/slider-2.jpg">
-                <div class="container">
-                    <div class="slide-content">
-                        <h2 class="slide-title">LaboreLabore et dolore magna</h2>
-                        <p>Enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi aliquip ex ea commodo
-                            consequat duis aute irure dolor in reprehenderit.</p>
-                        <a href="#" class="button">See details</a>
-                    </div>
-                </div>
-            </li>
-            <li data-bg-image="images/slider-3.jpg">
-                <div class="container">
-                    <div class="slide-content">
-                        <h2 class="slide-title">LaboreLabore et dolore magna</h2>
-                        <p>Enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi aliquip ex ea commodo
-                            consequat duis aute irure dolor in reprehenderit.</p>
-                        <a href="#" class="button">See details</a>
-                    </div>
-                </div>
-            </li>
+                </li>
+            @endforeach
         </ul>
     </div>
 

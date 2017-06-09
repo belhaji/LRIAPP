@@ -117,6 +117,9 @@
                     <li>
                         <a href="/admin/infosite"><i class="fa fa-adn fa-fw"></i> Description du site</a>
                     </li>
+                    <li>
+                        <a href="/admin/slides"><i class="fa fa-adn fa-fw"></i> Slider</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.sidebar-collapse -->

@@ -17,6 +17,18 @@ use Illuminate\Http\Request;
 
 class ResponsableController extends Controller
 {
+
+    public function home(){
+        $user = session()->get('user');
+        if (!$user) {
+            return redirect('/login');
+        }
+
+        return view('resp.home', [
+            'user' => $user
+        ]);
+    }
+
     public function addEvent(Request $request)
     {
         $title = $request->input('titre');

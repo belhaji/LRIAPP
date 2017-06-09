@@ -12,8 +12,23 @@
 
         <div class="fullwidth-block">
             <div class="container">
-                <div class="map" data-latitude="-6.897789" data-longitude="107.621735"></div>
-
+                <div class="widget contact-form">
+                    <form action="/message" method="post">
+                        <div class="col-md-offset-3 col-md-6">
+                            <p><input type="text" required placeholder="Votre nom..." name="nom"></p>
+                            <p><input type="email" required placeholder="Email..." name="email"></p>
+                        </div>
+                        <div class="col-md-offset-3 col-md-6">
+                            <p>
+                                <textarea name="message"  required placeholder="Message"></textarea>
+                            </p>
+                            <p class="text-right">
+                                <input type="submit" value="Envoyer le message">
+                            </p>
+                        </div>
+                        {{ csrf_field() }}
+                    </form>
+                </div>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="boxed-content">
@@ -40,23 +55,6 @@
                     </div>
                 </div>
 
-                <div class="widget contact-form">
-                    <form action="/message" method="post">
-                        <div class="col-md-offset-3 col-md-6">
-                            <p><input type="text" required placeholder="Votre nom..." name="nom"></p>
-                            <p><input type="email" required placeholder="Email..." name="email"></p>
-                        </div>
-                        <div class="col-md-offset-3 col-md-6">
-                            <p>
-                                <textarea name="message"  required placeholder="Message"></textarea>
-                            </p>
-                            <p class="text-right">
-                                <input type="submit" value="Envoyer le message">
-                            </p>
-                        </div>
-                        {{ csrf_field() }}
-                    </form>
-                </div>
             </div>
         </div>
 

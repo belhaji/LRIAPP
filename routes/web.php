@@ -15,9 +15,7 @@ Route::get('/recherche', 'SiteController@recherche');
 
 Route::group(['prefix' => 'admin'], function () {
 
-    Route::get('/', function () {
-        return view('admin.home');
-    });
+    Route::get('/', 'AdminController@home');
 
 
     // events
@@ -59,15 +57,19 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('password', 'AdminController@changerPassword');
 
 
+    // Slider
+    Route::get('slides', 'AdminController@slides');
+    Route::post('slides', 'AdminController@slides');
+    Route::get('slides/delete/{id}', 'AdminController@slideDelete');
+
+
 
 });
 
 
 Route::group(['prefix' => 'doct'], function () {
 
-    Route::get('/', function () {
-        return view('doct.home');
-    });
+    Route::get('/', 'DoctorantController@home');
 
     // posts
     Route::get('post/new', function () {
@@ -119,9 +121,7 @@ Route::group(['prefix' => 'doct'], function () {
 
 Route::group(['prefix' => 'resp'], function () {
 
-    Route::get('/', function () {
-        return view('resp.home');
-    });
+    Route::get('/', 'ResponsableController@home');
 
     // events
     Route::get('evenement/new', function () {

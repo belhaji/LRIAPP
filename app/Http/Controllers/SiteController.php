@@ -9,12 +9,15 @@ use App\InfoGen;
 use App\InfoPerso;
 use App\Member;
 use App\Post;
+use App\Slider;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
 {
     public function home()
     {
+        $slides = Slider::all();
+
         $events = Event::where('published', 1)
             ->orderBy('id', 'desc')
             ->take(6)
@@ -25,7 +28,8 @@ class SiteController extends Controller
             ->get();
         return view('site.home', [
             'events' => $events,
-            'posts' => $posts
+            'posts' => $posts,
+            'slides' => $slides
         ]);
     }
 
@@ -63,7 +67,7 @@ class SiteController extends Controller
 
     public function membres()
     {
-        $membres = Member::where('role', 'doctorant')->get();
+        $membres = Member::where('role', 'responsable')->get();
         return view('site.membre', ['membres' => $membres]);
     }
 

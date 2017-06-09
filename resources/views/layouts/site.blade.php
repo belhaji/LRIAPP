@@ -30,11 +30,7 @@
         <div class="container-fluid">
             <div class="header-bar">
                 <a href="/" class="branding">
-                    <img src="images/logo.png" alt="" class="logo">
-                    <div class="logo-type">
-                        <h1 class="site-title">LRI Labo</h1>
-                        <small class="site-description">Labo de ...</small>
-                    </div>
+                    <img width="100px" src="/img/logo.png" alt="" class="logo">
                 </a>
 
                 <nav class="main-navigation">

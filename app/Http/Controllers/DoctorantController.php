@@ -16,6 +16,17 @@ use Illuminate\Http\Request;
 
 class DoctorantController extends Controller
 {
+    public function home(){
+        $user = session()->get('user');
+        if (!$user) {
+            return redirect('/login');
+        }
+
+        return view('doct.home', [
+            'user' => $user
+        ]);
+    }
+
     public function addPost(Request $request)
     {
         $title = $request->input('titre');

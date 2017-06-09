@@ -7,11 +7,25 @@ use App\InfoGen;
 use App\Member;
 use App\Message;
 use App\Post;
+use App\Slider;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+
+    public function home()
+    {
+        $user = session()->get('user');
+        if (!$user) {
+            return redirect('/login');
+        }
+
+        return view('admin.home', [
+            'user' => $user
+        ]);
+    }
+
     public function addEvent(Request $request)
     {
         $title = $request->input('titre');
@@ -202,7 +216,7 @@ class AdminController extends Controller
         }
 
         $info = InfoGen::first();
-        if (!$info){
+        if (!$info) {
             $info = new InfoGen();
         }
         if ($request->isMethod('POST')) {
@@ -214,5 +228,34 @@ class AdminController extends Controller
             'info' => $info
         ]);
 
+    }
+
+
+    public function slides(Request $request)
+    {
+        $user = session()->get('user');
+        if (!$user) {
+            return redirect('/login');
+        }
+        if ($request->isMethod('POST')) {
+            $slide = new Slider($request->all());
+            $slide->save();
+        }
+        $slides = Slider::all();
+        return view('admin.slider.show', ['slides' => $slides]);
+
+    }
+
+    public function slideDelete($id)
+    {
+        $user = session()->get('user');
+        if (!$user) {
+            return redirect('/login');
+        }
+        $slide = Slider::find($id);
+        if ($slide) {
+            $slide->delete();
+        }
+        return redirect('/admin/slides');
     }
 }

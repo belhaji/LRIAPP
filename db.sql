@@ -79,7 +79,7 @@ CREATE TABLE `events` (
   `lieux` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '',
   `member_id` int(11) DEFAULT '0',
   `published` int(11) DEFAULT '0',
-  `date` date DEFAULT '2017-06-07',
+  `date` date DEFAULT '2017-06-09',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -135,8 +135,8 @@ CREATE TABLE `formations` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `titre` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '',
   `etablissement` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '',
-  `date_debut` date DEFAULT '2017-06-07',
-  `date_fin` date DEFAULT '2017-06-07',
+  `date_debut` date DEFAULT '2017-06-09',
+  `date_fin` date DEFAULT '2017-06-09',
   `member_id` int(11) DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -165,7 +165,7 @@ CREATE TABLE `info_gens` (
   `titre` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `description` text COLLATE utf8mb4_unicode_ci,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -174,7 +174,6 @@ CREATE TABLE `info_gens` (
 
 LOCK TABLES `info_gens` WRITE;
 /*!40000 ALTER TABLE `info_gens` DISABLE KEYS */;
-INSERT INTO `info_gens` VALUES (1,'Presentation du laboooo','hello ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis Lorem ipsum dolor sit amet, consectetur adipiscing elit,'),(2,'sasa',NULL),(3,'sasa',NULL),(4,'sasa',NULL),(5,'sasa','sas'),(6,'Presentation du labo','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis Lorem ipsum dolor sit amet, consectetur adipiscing elit,'),(7,'Presentation du labo','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis Lorem ipsum dolor sit amet, consectetur adipiscing elit.'),(8,'Presentation du labo','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis Lorem ipsum dolor sit amet, consectetur adipiscing elit,');
 /*!40000 ALTER TABLE `info_gens` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -192,8 +191,8 @@ CREATE TABLE `info_persos` (
   `tel` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '',
   `bio` text COLLATE utf8mb4_unicode_ci,
   `adresse` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '',
-  `date_naissance` date DEFAULT '2017-06-07',
-  `date_prev` date DEFAULT '2017-06-07',
+  `date_naissance` date DEFAULT '2017-06-09',
+  `date_prev` date DEFAULT '2017-06-09',
   `lieu_naissance` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '',
   `situation_familliale` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '',
   `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '',
@@ -202,7 +201,7 @@ CREATE TABLE `info_persos` (
   `laureat` int(11) DEFAULT NULL,
   `member_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -211,7 +210,7 @@ CREATE TABLE `info_persos` (
 
 LOCK TABLES `info_persos` WRITE;
 /*!40000 ALTER TABLE `info_persos` DISABLE KEYS */;
-INSERT INTO `info_persos` VALUES (1,'admin','','',NULL,'','2017-06-07','2017-06-07','','','',NULL,NULL,NULL,1);
+INSERT INTO `info_persos` VALUES (1,'admin','','',NULL,'','2017-06-09','2017-06-09','','','',NULL,NULL,NULL,1),(2,'Adil','belhaji','+212608132784',NULL,'','2017-06-09','2017-06-09','','','',NULL,NULL,NULL,2);
 /*!40000 ALTER TABLE `info_persos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -257,7 +256,7 @@ CREATE TABLE `members` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `members_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -266,7 +265,7 @@ CREATE TABLE `members` (
 
 LOCK TABLES `members` WRITE;
 /*!40000 ALTER TABLE `members` DISABLE KEYS */;
-INSERT INTO `members` VALUES (1,'admin@gmail.com','d033e22ae348aeb5660fc2140aec35850c4da997','admin',1,0,NULL,NULL);
+INSERT INTO `members` VALUES (1,'admin@gmail.com','d033e22ae348aeb5660fc2140aec35850c4da997','admin',1,0,NULL,NULL),(2,'adil@gmail.com','fbef20528a361fd93bbf6e7386eb92a27dcfed17','doctorant',1,0,'2017-06-09 23:42:01','2017-06-09 23:42:29');
 /*!40000 ALTER TABLE `members` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -309,7 +308,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=572 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=587 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -318,7 +317,7 @@ CREATE TABLE `migrations` (
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES (558,'2017_05_13_170530_create_member_table',1),(559,'2017_05_13_173758_create_info_perso',1),(560,'2017_05_13_181239_create_laureats_table',1),(561,'2017_05_13_194116_create_equipes_table',1),(562,'2017_05_13_200401_create_domaines_table',1),(563,'2017_05_13_201845_create_sous_domaines_table',1),(564,'2017_05_13_204504_create_projects_table',1),(565,'2017_05_13_213036_create_posts_table',1),(566,'2017_05_13_214114_create_events_table',1),(567,'2017_05_13_215142_create_publications_table',1),(568,'2017_05_13_215912_create_formations_table',1),(569,'2017_05_27_235253_create_experiences',1),(570,'2017_06_03_222256_create_messages_table',1),(571,'2017_06_07_230847_create_info_gens_table',1);
+INSERT INTO `migrations` VALUES (572,'2017_05_13_170530_create_member_table',1),(573,'2017_05_13_173758_create_info_perso',1),(574,'2017_05_13_181239_create_laureats_table',1),(575,'2017_05_13_194116_create_equipes_table',1),(576,'2017_05_13_200401_create_domaines_table',1),(577,'2017_05_13_201845_create_sous_domaines_table',1),(578,'2017_05_13_204504_create_projects_table',1),(579,'2017_05_13_213036_create_posts_table',1),(580,'2017_05_13_214114_create_events_table',1),(581,'2017_05_13_215142_create_publications_table',1),(582,'2017_05_13_215912_create_formations_table',1),(583,'2017_05_27_235253_create_experiences',1),(584,'2017_06_03_222256_create_messages_table',1),(585,'2017_06_07_230847_create_info_gens_table',1),(586,'2017_06_09_231624_create_sliders_table',1);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -360,8 +359,8 @@ DROP TABLE IF EXISTS `projects`;
 CREATE TABLE `projects` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `titre` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '',
-  `date_debut` date DEFAULT '2017-06-07',
-  `date_fin` date DEFAULT '2017-06-07',
+  `date_debut` date DEFAULT '2017-06-09',
+  `date_fin` date DEFAULT '2017-06-09',
   `member_id` int(11) DEFAULT '0',
   `sous_domaine_id` int(11) DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
@@ -392,7 +391,7 @@ CREATE TABLE `publications` (
   `contenu` text COLLATE utf8mb4_unicode_ci,
   `desc` text COLLATE utf8mb4_unicode_ci,
   `member_id` int(11) DEFAULT '0',
-  `date` date DEFAULT '2017-06-07',
+  `date` date DEFAULT '2017-06-09',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -406,6 +405,31 @@ CREATE TABLE `publications` (
 LOCK TABLES `publications` WRITE;
 /*!40000 ALTER TABLE `publications` DISABLE KEYS */;
 /*!40000 ALTER TABLE `publications` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sliders`
+--
+
+DROP TABLE IF EXISTS `sliders`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sliders` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `titre` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sliders`
+--
+
+LOCK TABLES `sliders` WRITE;
+/*!40000 ALTER TABLE `sliders` DISABLE KEYS */;
+INSERT INTO `sliders` VALUES (6,'hello','sasasa'),(7,'Presentation du labo','sasasa'),(8,'sasasasasasass','sasajbjkhvjahdvjavdjvazjdvazd');
+/*!40000 ALTER TABLE `sliders` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -443,4 +467,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-07 23:38:32
+-- Dump completed on 2017-06-09 23:53:16
