@@ -53,6 +53,9 @@ class SiteController extends Controller
     {
         $equipes = Equipe::all();
         $info = InfoGen::first();
+        if (!$info){
+            $info = new InfoGen();
+        }
         return view('site.presentation', [
             'equipes' => $equipes,
             'info' => $info

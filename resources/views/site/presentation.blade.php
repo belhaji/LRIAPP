@@ -34,8 +34,8 @@
                                 <h3>{{ $equipe->nom }}</h3>
                                 <p>{{ $equipe->description }}</p>
                                 <small>responsable :
-                                    {{ $equipe->responsable()->first()->nom }}
-                                    {{ $equipe->responsable()->first()->prenom }}
+                                    {{ $equipe->responsable()->first()->infoPerso()->first()->nom }}
+                                    {{ $equipe->responsable()->first()->infoPerso()->first()->prenom }}
                                 </small>
                             </div>
                         </div>
